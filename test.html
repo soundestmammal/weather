@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta http-equiv="refresh" content="60">
+
+
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML =
+                h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+            span.style.fontSize = "25px";
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i
+            }; // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+    <script type="text/javascript" src="date_time.js"></script>
+</head>
+
+
+<body>
+    <center>
+
+        <!--------------------------- Time and Date ------------------------------>
+        <date>
+            <span id="date_time"></span>
+            <script type="text/javascript">
+                window.onload = date_time('date_time');
+            </script>
+        </date>
+
+        <body onload="startTime()">
+            <div id="txt">
+            </div>
+            <br>
+        </body>
+
+        <!------------------------ Weather Forecast ------------------------------>
+        <iframe id="forecast_embed" type="text/html" frameborder="0" height="245" width="700px" src="http://forecast.io/embed/#lat=34.260338&lon=-78.066365&name=Leland, NC"> </iframe>
+        <br>
+
+    </center>
+
+
+
+
+
+    <script type="text/javascript">
+        var currentTime = new Date().getHours();
+        if (7 <= currentTime && currentTime < 12) {
+            if (document.body) {
+                document.bgColor = "#ffffc4";
+            }
+        } else if (12 <= currentTime && currentTime < 16) {
+            if (document.body) {
+                document.bgColor = "#6fd3ff";
+            }
+        } else if (16 <= currentTime && currentTime < 17) {
+            if (document.body) {
+                document.bgColor = "#d86e36";
+            }
+        } else if (17 <= currentTime && currentTime < 20) {
+            if (document.body) {
+                document.bgColor = "#ba3737";
+            }
+        } else {
+            if (document.body) {
+                document.bgColor = "#000000";
+            }
+        }
+    </script>
+
+</body>
+
+
+</html>
