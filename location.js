@@ -17,5 +17,10 @@ function success(position) {
 var key = 9a62d2eb73fec908
 var Weather = "http://api.wunderground.com/api/”+ key +”/forecast/geolookup/conditions/q/" + Geo.lat + "," + Geo.lng + ".json";
 
-
-
+$.ajax({
+url : Weather,
+dataType : "jsonp",
+success : function(data) {
+// get all the information
+}
+});
