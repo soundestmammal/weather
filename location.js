@@ -24,3 +24,17 @@ success : function(data) {
 // get all the information
 }
 });
+
+var location =data['location']['city'];
+var temp = data['current_observation']['temp_f'];
+var img = data['current_observation']['icon_url'];
+var desc = data['current_observation']['weather'];
+var wind = data['current_observation']['wind_string'];
+
+//setting the spans to the correct parameters
+$('#location').html(location);
+$('#temp').html(temp);
+$('#desc').html(desc);
+$('#wind').html(wind);
+//filling the image src attribute with the image url
+$('#img').attr('src', img);
